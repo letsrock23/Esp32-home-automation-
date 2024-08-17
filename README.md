@@ -12,4 +12,4 @@ Setup instruction:
  //Make sure all the libraries and esp32 board install in arduino ide. 
  // if you want to control home appliances like light fan then replace the led lights pinout with relay modules in pinout. 
 
- ///////////////////////////////////ENJOY////////////CREATED AND DISGNED BY FARHAN SALEH///////////////////////////////////
+ ///////////////////////////////////ENJOY////////////CREATED AND DISGNED BY FARHAN SALEH////////////////////////////////////
