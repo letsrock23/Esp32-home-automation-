@@ -1,0 +1,43 @@
+Components:
+-ESP32
+-Adafruit SH1106 OLED Display (I2C)
+-Four LEDs
+-Four 220Ω Resistors (for the LEDs)
+
+Circuit Connections:
+--ESP32 Pin to SH1106 Display:
+
+-SDA (Data) Pin: Connect to GPIO 21 on the ESP32.
+-SCL (Clock) Pin: Connect to GPIO 22 on the ESP32.
+-VCC: Connect to the 3.3V pin on the ESP32.
+-GND: Connect to a GND pin on the ESP32.
+-ESP32 Pin to LEDs (with 220Ω Resistors in Series):
+
+-LED1: Connect the anode (longer leg) to GPIO 19, and the cathode (shorter leg) to GND through a 220Ω resistor.
+
+-LED2: Connect the anode to GPIO 18, and the cathode to GND through a 220Ω resistor.
+
+-LED3: Connect the anode to GPIO 23, and the cathode to GND through a 220Ω resistor.
+
+-LED4: Connect the anode to GPIO 5, and the cathode to GND through a 220Ω resistor.
+
+Circuit Diagram Overview:
+-ESP32 (3.3V & GND): Powers the OLED display.
+-GPIO 21 & GPIO 22: Used for I2C communication with the SH1106 display.
+-GPIO 19, 18, 23, 5: Control the four LEDs.
+
+
+Diagram Visual:
+           [ SH1106 OLED Display ]
+  +--------------------+---------------------+
+  |  VCC --> 3.3V      |   SDA --> GPIO 21    |
+  |  GND --> GND       |   SCL --> GPIO 22    |
+  +--------------------+---------------------+
+
+           [ LEDs with Resistors ]
+  +----------------------------+---------------------+
+  |  LED1 (Anode) --> GPIO 19   |   Cathode --> GND   |
+  |  LED2 (Anode) --> GPIO 18   |   Cathode --> GND   |
+  |  LED3 (Anode) --> GPIO 23   |   Cathode --> GND   |
+  |  LED4 (Anode) --> GPIO 5    |   Cathode --> GND   |
+  +----------------------------+---------------------+
