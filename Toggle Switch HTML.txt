@@ -1,0 +1,102 @@
+//if you want any changes then change it and replace the Arduino html part with that. 
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #282c34;
+      color: #ffffff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    .header {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #61dafb;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .device {
+      background: linear-gradient(135deg, #EE4B2B, #feb47b);
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .device:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+    .device-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .device-name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .device-control {
+      font-size: 18px;
+      color: #ffffff;
+      background-color: #61dafb;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      text-decoration: none;
+    }
+    .device-control:hover {
+      background-color: #21a1f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">ESP32 Device Control</div>
+    <div class="grid-container">
+      <div class="device" onclick="toggleLed(1)">
+        <div class="device-icon">&#x1f4a1;</div>
+        <div class="device-name">Living Room Light</div>
+        <a class="device-control">Toggle Light</a>
+      </div>
+      <div class="device" onclick="toggleLed(2)">
+        <div class="device-icon">&#x1f4a1;</div>
+        <div class="device-name">Bedroom Light</div>
+        <a class="device-control">Toggle Light</a>
+      </div>
+      <div class="device" onclick="toggleLed(3)">
+        <div class="device-icon">&#x1f4a1;</div>
+        <div class="device-name">Kitchen Light</div>
+        <a class="device-control">Toggle Light</a>
+      </div>
+      <div class="device" onclick="toggleLed(4)">
+        <div class="device-icon">&#x1f4a1;</div>
+        <div class="device-name">Garage Light</div>
+        <a class="device-control">Toggle Light</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleLed(ledNumber) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "/toggle?led=" + ledNumber, true);
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
